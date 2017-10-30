@@ -32,40 +32,40 @@ percentOT
 
 #Plot 1
 ggplot(percentOT, aes(x = Year, y = OT)) +
-  geom_bar(stat = "identity", fill = "red") + 
-  geom_text(aes(label=salOT), position=position_dodge(width=0.9), vjust=0) + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +   
-  xlab("Year") + ylab("Over Time Salary OF MA in %") + 
-  ggtitle("Over Time Salaries in MA over the Years")+coord_flip()
+  geom_bar(stat = "identity", fill = "blue") + 
+  geom_text(aes(label=paste(round(salOT/1e6,2), "M")), position=position_dodge(width=0.9), size=2, vjust=0, hjust=0) + 
+  theme(axis.text.x = element_text(angle = 0, hjust = 1)) +   
+  xlab("Year") + ylab("Total Over Time Payout in %") + 
+  ggtitle("Total Over Time Payouts for all position types in MA")+coord_flip()
 
 #Plot 2
 ggplot(percentOT, aes(x = Year, y = OTFTE)) +
-  geom_bar(stat = "identity", fill = "red") + 
-  geom_text(aes(label=salOTFTE), position=position_dodge(width=0.9), vjust=0) + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +   
-  xlab("Year") + ylab("OT for FTE OF MA in %") + 
-  ggtitle("Over Time Salaries for Full Time Employees in MA over the Years")+coord_flip()
+  geom_bar(stat = "identity", fill = "blue") + 
+  geom_text(aes(label=paste(round(salOTFTE/1e6,2),"M")), position=position_dodge(width=0.9), size=2, vjust=0, hjust=0) + 
+  theme(axis.text.x = element_text(angle = 0, hjust = 1)) +   
+  xlab("Year") + ylab("Total OT Payout to Full time Employees in %") + 
+  ggtitle("Total Over Time payouts to Full Time Employees in MA")+coord_flip()
 
 #Plot 3
 ggplot(percentOT, aes(x = Year, y = OTFTC)) +
-  geom_bar(stat = "identity", fill = "red") + 
-  geom_text(aes(label=salOTFTC), position=position_dodge(width=0.9), vjust=0) + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +   
-  xlab("Year") + ylab("OT for FTC OF MA in %") + 
-  ggtitle("Over Time Salaries for Full Time Contractors in MA over the Years")+coord_flip()
+  geom_bar(stat = "identity", fill = "blue") + 
+  geom_text(aes(label=paste(round(salOTFTC/1e3,2),"K")), position=position_dodge(width=0.9), size=2, vjust=0, hjust=0) + 
+  theme(axis.text.x = element_text(angle = 0, hjust = 1)) +   
+  xlab("Year") + ylab("Total OT Payout to Full time Contractors in %") + 
+  ggtitle("Total Over Time payouts to Full Time Contractors in MA")+coord_flip()
 
 #Plot 4
 ggplot(percentOT, aes(x = Year, y = OTPTE)) +
-  geom_bar(stat = "identity", fill = "red") + 
-  geom_text(aes(label=salOTPTE), position=position_dodge(width=0.9), vjust=0) + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +   
-  xlab("Year") + ylab("OT for PTE OF MA in %") + 
-  ggtitle("Over Time Salaries for Part Time Employees in MA over the Years")+coord_flip()
+  geom_bar(stat = "identity", fill = "blue") + 
+  geom_text(aes(label=paste(round(salOTPTE/1e6,2),"M")), position=position_dodge(width=0.9),size=2, vjust=0, hjust=0) + 
+  theme(axis.text.x = element_text(angle = 0, hjust = 1)) +   
+  xlab("Year") + ylab("Total OT Payout to Part time Employees in %") + 
+  ggtitle("Total Over Time payouts to Part Time Employees in MA")+coord_flip()
 
 #Plot 5
 ggplot(percentOT, aes(x = Year, y = OTPTC)) +
-  geom_bar(stat = "identity", fill = "red") + 
-  geom_text(aes(label=salOTPTC), position=position_dodge(width=0.9), vjust=0) + 
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +   
-  xlab("Year") + ylab("OT for PTC OF MA in %") + 
-  ggtitle("Over Time Salaries for Part Time Contractors in MA over the Years")+coord_flip()
+  geom_bar(stat = "identity", fill = "blue") + 
+  geom_text(aes(label=paste(round(salOTPTC/1e3,2), "K")), position=position_dodge(width=0.9),size=2, vjust=0, hjust=0) + 
+  theme(axis.text.x = element_text(angle = 0, hjust = 1)) +   
+  xlab("Year") + ylab("Total OT Payout to Part time Contractors in %") + 
+  ggtitle("Total Over Time payouts to Part Time Contractors in MA")+coord_flip()
